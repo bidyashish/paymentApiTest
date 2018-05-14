@@ -1,58 +1,42 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+This is a simple LARAVEL Application based on  LARAVEL 5.5 LTS   for API Authentication.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Solution for Test https://github.com/claytonchew/developer-assessment-tests/tree/master/backend/intermediate_lead/part2
 
-## About Laravel
+Usage :
+Create a registration API that requires the user to send in their username, password, and their account type for registration. Each user gets RM 100 upon registration.
+Create a login API that logs the user into the system.
+Create an API that allows a user to send money to another user.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Project info:
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+This project has sqlite DB in database folder
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+Installation:
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+1. Download the Project as Zip or fork it.
 
-## Laravel Sponsors
+2. Open .env file set the database prim.sqlite file path
+   In Linux Environment use   pwd in folder and set the path
+   In Windows get folder address and set the file path for prim.sqlite
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+3. In PHP( 7.1+ only) Dev Environment  Run Command  
+   Note  : Must have ALL PHP and SQLITE SETUP
+    
+      php artisan serve
+5.  Project has three ENDPOINT /login  ,  /register   , /transfer
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
+4.   Open postman set POST request  and  Body as  raw and header type JSON
 
-## Contributing
+    URL   http://localhost:8000/api/register
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+      JSON  to send   :     {   "name": "Ashish", "email": "bidya@bidya.com", "type" : "customer","password": "mypass","c_password" :"mypass"  }
+                  
+                 
+    http://localhost:8000/api/login
 
-## Security Vulnerabilities
+     JOSN to login :  { 	"email":"bisssssdya@bidssya.com", "password":"mypass" }  
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5. http://localhost:8000/api/transfer
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
